@@ -35,6 +35,7 @@ class TestInterval(TestCase):
         self.assertTrue(overlaps(Interval(1, 2), Interval(2, 3)))
         self.assertTrue(overlaps(Interval(1, 3), Interval(2, 4)))
         self.assertTrue(overlaps(Interval(1, 10), Interval(5, 15)))
+        self.assertFalse(overlaps(Interval(1, 10), Interval(5, 15)),'Expected failure here')
 
     def test_not_overlap(self):
         """Test intervals do not overlap with a small and a large gap."""
